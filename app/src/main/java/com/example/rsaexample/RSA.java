@@ -77,6 +77,7 @@ public class RSA {
     public static byte[] decryptByPrivateKey(byte[] data, String key)
             throws Exception {
 
+//The KEY must be 512 bit, otherwise it will produce wrong result
         byte[] keyBytes = decryptBASE64(key);
 
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
@@ -108,7 +109,7 @@ public class RSA {
 
     public static byte[] encryptByPublicKey(byte[] data, String key)
             throws Exception {
-
+//The KEY must be 512 bit, otherwise it will produce wrong result
         byte[] keyBytes = decryptBASE64(key);
 
         X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);

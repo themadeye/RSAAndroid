@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import java.security.Key;
 import java.security.KeyFactory;
+import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.HashMap;
@@ -61,19 +63,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     "EBKBfMihnLgCSW8Xf7MCH+DSGHNvBg2xSNhcfEmnbLPLnbuz4ySn1UB0lH2eqxy5" +
                                     "0zstxhTY0binD9Y+rwIDAQAB";
                     String Private =
-                            "MIICxjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIr5NQ/LYPG/UCAggA" +
-                                    "MBQGCCqGSIb3DQMHBAiLh89iGSkmoASCAoBCpAo9/IzDE3yGhvWr9RgozE7revOo" +
-                                    "V2OXmU+d0+WYAAx2GYVaUCbFVrmgiVmrbiTgLUMXAGIpvxQ2rzyIvRHW/RN3Gcky" +
-                                    "qR/AwBatzixqrnoS4aD1/Ovjr4hwde4XHYbPEilZZuVAJFiznhy73qm/So4XghSY........." ;
+                            "MIICXAIBAAKBgQCKRSJjMPnvgwPPwq+2Oje8KGV6KOBxxz2Y/s24WNzecHFLXKLA" +
+                                    "hAL/FphjIF8epQW1xcorxzAgEt+qmmF1QEA1VOAHLuS+0rlaAarJ8xZNVaXdVRAd" +
+                                    "ZMIaln0gA3trbpln2iiCDj7yR/mqTNqCGoL2axXQrI8cTAK8DVyPiMzCtQIDAQAB" +
+                                    "AoGARH2QVg/5jgGYzr4CKcLWvtZHxeYfn1xxD6sPngQui+Soygq995ysm0zG+Tsc" +
+                                    "wuI9XNf3mA3XsduHfUtxgRHte4MGhhDnUcpLYNxp3dZeuZINVoKPZjhCTquCF0R1" +
+                                    "cIPSyExlG9JHrkmznwkXLOBg6jAyIQ7kpzTpaqz+HX8njYECQQC8KAdt9yX3pJFc" +
+                                    "6Gf9GY26s6xjENxixY5kD6xPEgBb0ogSiAxTQMHV863DHkzy7ZcV3ayUJmKab0+k" +
+                                    "76i7WJYhAkEAvCBMF/o/nTUDIIfZ/YWTwuugLT6canp6aGiOfSJJopLrvcYrJoFd" +
+                                    "4YXZvWThIkUg/nTEC36HcrhnWY3ianYyFQJBALFkm/yVMvqT8WjCxKffW7xWgYS0" +
+                                    "9NM6ptC35iB2PFhV2Wx/T/994kIxB/YZrzqpvfQjlv3mYrhvkYtTWKWpE4ECQB8i" +
+                                    "/VUunx7G6miU85iJZkZpt04lwb/B28ayH3tIlIVq6ce0J+osmTw9aid1rel9JZPY" +
+                                    "AaahX4u2R6zD1gim3W0CQEN1jlMFTZWm21xCOkzUt8uzvbk3YpMUJ1ZgQ+mYpMwP" +
+                                    "uqY1Ogg6+uwSxAHk/k4Mw3JWcVpvuIEARXWkFQbD84I=" ;
                     byte[] publicBytes = Base64.getDecoder().decode(Public.getBytes());
                     X509EncodedKeySpec keySpec = new X509EncodedKeySpec(publicBytes);
                     KeyFactory keyFactory = KeyFactory.getInstance("RSA");
                     PublicKey pubKey = keyFactory.generatePublic(keySpec);
 
                     byte[] priBytes = Base64.getDecoder().decode(Private.getBytes());
-                    X509EncodedKeySpec priSpec = new X509EncodedKeySpec(priBytes);
+//                    X509EncodedKeySpec priSpec = new X509EncodedKeySpec(priBytes);
+                    PKCS8EncodedKeySpec priSpec = new PKCS8EncodedKeySpec(priBytes);
                     KeyFactory keyFact = KeyFactory.getInstance("RSA");
-                    PublicKey priKey = keyFact.generatePublic(priSpec);
+                    PrivateKey priKey = keyFact.generatePrivate(priSpec);
 
                     Map<String, Object> keyMap = new HashMap<String, Object>(2);
 
