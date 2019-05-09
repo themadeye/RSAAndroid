@@ -10,7 +10,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Generate Private and Public Key"/>
+        android:text="Generate Private and Public Key"
+        />
+
+    <Button
+        android:id="@+id/gotologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="login"
+        />
 
     <EditText
         android:id="@+id/privatekeyEdit"
@@ -18,6 +27,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:hint="Public Key"/>
+
     <EditText
         android:id="@+id/publickeyEdit"
         android:layout_width="fill_parent"

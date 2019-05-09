@@ -1,5 +1,6 @@
 package com.example.rsaexample;
 
+import android.app.Application;
 import android.util.Base64;
 
 import java.math.BigInteger;
@@ -143,17 +144,16 @@ public class RSA {
         return encryptBASE64(key.getEncoded());
     }
 
-    public static String getPublicKey(Map<String, Object> keyMap)
-            throws Exception {
-        Key key = (Key) keyMap.get(PUBLIC_KEY);
+    public static String getPublicKey(Map<String, Object> keyMap) throws Exception {
 
+        Key key = (Key) keyMap.get(PUBLIC_KEY);
         return encryptBASE64(key.getEncoded());
+
     }
 
 
     public static Map<String, Object> initKey() throws Exception {
-        KeyPairGenerator keyPairGen = KeyPairGenerator
-                .getInstance(KEY_ALGORITHM);
+        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance(KEY_ALGORITHM);
         keyPairGen.initialize(1024);
 
         KeyPair keyPair = keyPairGen.generateKeyPair();

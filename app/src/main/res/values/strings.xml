@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">RSAExample</string>
+    <string name="pubkey">MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAI933Qwn8DsuM6frle78WtwYwve2
+rZX6gMiuzXut44Rr4au9LqJk9hm+T/IV92r++dAJSDT7JmSbOwC+tD07wl8rrmXoRCEvYzSolktG
+K4x78+XajsRxq+gDJMjO9LsrharyV0aNlUJD34KjFBnKmXn8RCGQQm4hTk4q2GtT9hVxAgMBAAEC
+gYAFviUJ3e/w1oBhSfI++SFyfDsSwlTLpK0HG2/KfaMtrBtH0+emM0diaiTqcwvUjl3QAJiRj2/g
+Tp3YsBr5rztHi/yeJvCyOKEePpimyGEsJ4y8De+EGhBQYIiTAbXtuNpKEhBFuUGrGUo6mW9n5hA0
+sQovje1rleWrTb/C7jVX1wJBAMDAvutpVooV+fSkdyA+q0Vtr1FzCFieXfRqGul5j5UgyYROE8Cb
+7hwT8Fzcfyt0qxgLyaehzILXeixN9etzbecCQQC+izNkG1+g1lZMhaulk7jw/dSVDALGDPWkw5rB
+R0q9JeVmnxOKCAi2RBDZlLeyTy4cnWKFcTrOtGKur8tjoYbnAkAfzKyyscIxLcb68Vcl3rDq11mh
+GlU6KYZemFKwSfnCJJKaXTctA4yY3UE+ULI6PRks8mTmXu8aduoU/RehLH3pAkBaA4iTkhrq8FZ0
+b/FWlyKXNlJm1vW4egbRf1ZsWDGGiZCFmkCwxHrZH+6V2xussJsoCXGxeHw/ihfUTlfXCUehAkBS
+4f0trh+DOjM4ohVMGX4np/fdQ+UFAs1LBtkMuStXBpefNyEGHEBup199JAAlYxZ3EW8tzMpbc4tm
+MOJVA6Yk
+
+</string>
+    <string name="prikey">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3pW9w4NHICPf/keZTSYNeLqmu/MacESiXeQm2
+zbeq4ZMh0us/FlUYj+RAJi4rspwp5Yga47iz7AXzjTdzQLKLf4KUkN7W2EyC7dNr6gOK8ykFjumL
+LwVb495E9ueMD+ueBiWz3gfs/vAKMkuksGpT8HTqMKBcsAwtOUTOHPjqZQIDAQAB
+</string>
 </resources>
