@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText privatekeyEdit;
     private Button initkeyButton;
     private Button gotologin;
+    private Button gotojson;
     private Button btnEncrypt;
     private Button btnSig;
     private static String publicKey = "";
@@ -28,11 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         privatekeyEdit = (EditText)findViewById(R.id.privatekeyEdit);
         initkeyButton = (Button)findViewById(R.id.initkeyButton);
         gotologin = (Button)findViewById(R.id.gotologin);
+        gotojson = (Button)findViewById(R.id.gotojson);
         btnEncrypt = (Button)findViewById(R.id.btnEncrypt);
         btnSig = (Button)findViewById(R.id.btnSig);
 
         btnEncrypt.setOnClickListener(this);
         gotologin.setOnClickListener(this);
+        gotojson.setOnClickListener(this);
         btnSig.setOnClickListener(this);
         initkeyButton.setOnClickListener(this);
     }
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, LoginActivity.class);
 //            intent.putExtra("pubkey", publicKey);
 //            intent.putExtra("prikey", privateKey);
+            startActivity(intent);
+        }else if(view == gotojson){
+            Intent intent = new Intent(this, JsonExample.class);
             startActivity(intent);
         }
 
