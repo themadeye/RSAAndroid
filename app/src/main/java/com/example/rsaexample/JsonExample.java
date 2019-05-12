@@ -57,44 +57,44 @@ public class JsonExample extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new JsonTask().execute();
+//                try{
+//                    JSONObject json = readJsonFromUrl("https://jsonplaceholder.typicode.com/todos/1");
+//                    jsontxt.setText(json.toString());
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
             }
         });
     }
     private class JsonTask extends AsyncTask<String, String, String> {
-        InputStream inputStream = null;
-
+        String result = "";
         protected String doInBackground(String... params) {
-            try {
-                getData();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            try{
+                JSONObject json = readJsonFromUrl("https://jsonplaceholder.typicode.com/todos/1");
+                result = json.toString();
+            }catch (Exception e){
                 e.printStackTrace();
             }
             return null;
         }
 
         @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
+        protected void onPostExecute(String r) {
+            super.onPostExecute(r);
             jsontxt.setText(result);
         }
     }
 
-    private void getData() throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://jsonplaceholder.typicode.com/todos/1");
-        try {
-            String response = json.getString("delectus aut autem");
-            Log.e("AAAAAAAAA %s", response);
-            result = response;
-
-        } catch (JSONException e) {
-
-            e.printStackTrace();
+    private static String readAll(Reader rd) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int cp;
+        while ((cp = rd.read()) != -1) {
+            sb.append((char) cp);
         }
+        return sb.toString();
     }
 
-    public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -104,14 +104,5 @@ public class JsonExample extends AppCompatActivity {
         } finally {
             is.close();
         }
-    }
-
-    private String readAll(Reader rd) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        int cp;
-        while ((cp = rd.read()) != -1) {
-            sb.append((char) cp);
-        }
-        return sb.toString();
     }
 }
